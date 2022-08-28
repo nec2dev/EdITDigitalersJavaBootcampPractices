@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Lista de Empleados</title>
+    </h:head>
+    <h:body>
+        <h:form id="alta_empleado">
+        
+            <h:outputLabel>DNI:&nbsp;</h:outputLabel>
+            <h:inputText id="dni" value="#{empleadoBean.empleado.dni}" 
+                         required="true"
+                         label="DNI">
+                <f:validateLength maximum="8" minimum="6"/>
+            </h:inputText>
+            <h:outputLabel>Nombre:&nbsp;</h:outputLabel>
+            <h:inputText value="#{empleadoBean.empleado.nombre}"
+                         required="true"
+                         label="Nombre"/>
+            <h:outputLabel>Apellido:&nbsp;</h:outputLabel>
+            <h:inputText value="#{empleadoBean.empleado.apellido}" 
+                         required="true"
+                         label="Apellido">
+            </h:inputText>
+            <h:outputLabel>Remuneración:&nbsp;</h:outputLabel>
+            <h:inputText id="remuneracion" 
+                         required="true" 
+                         label="Remuneración"
+                         value="#{empleadoBean.empleado.remuneracion}">
+                <f:validateDoubleRange maximum="30000" minimum="3600"/>
+            </h:inputText>
+            <h:commandButton value="Agregar" action="#{empleadoBean.agregar()}"/>
+        
+        </h:form>
+            <h2>Lista de empleados</h2>
+ 
+    		<h:dataTable value="#{listaDeEmpleadosBean.empleados}" var="e">
+    			<h:column>
+    				<!-- cabecera de la columna -->
+    				<f:facet name="header">DNI</f:facet>
+    				<!-- valor de una fila para esta columna -->
+    				#{e.dni}
+    			</h:column>
+ 
+    			<h:column>
+    				<f:facet name="header">Nombre</f:facet>
+    				#{e.nombre}
+    			</h:column>
+ 
+    			<h:column>
+    				<f:facet name="header">Apellido</f:facet>
+    				#{e.apellido}
+    			</h:column>
+ 
+    			<h:column>
+    				<f:facet name="header">Remuneración</f:facet>
+    				#{e.remuneracion}
+    			</h:column>
+ 
+    		</h:dataTable>
+        
+    </h:body>
+</html>
+

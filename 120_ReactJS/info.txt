@@ -1,0 +1,30 @@
+LABORATORIO REACT
+CLASE 1
+
+
+Vamos a comenzar por crear un UI de tipo red social en el cual tengamos varias piezas de información que tienen que ser compartidas y replicadas a lo largo de toda la aplicación por lo cual tomamos provecho de la arquitectura reactiva de la librería React
+
+
+Ejercicio 1
+Crear un entorno de desarrollo para React instalando Webpack y Babel como herramientas de bundler y transpilador de código
+
+
+Ejercicio 2
+Crear un componente React llamado Container el cual va a tener todo el código de la aplicación que vamos a crear. El mismo debe ser montado dentro de algún elemento ya vivo en el DOM cuyo id sea container. El componente Container debe tener pre inicializado un estado local sin información, el cual vamos a usar a futuro para rellenar el contenido de la aplicación.
+
+
+Ejercicio 3
+Vamos a crear dos componentes más que vamos a reutilizar a lo largo de toda la fachada del UI llamados Header y Footer los cuales se muestran arriba y abajo de todo el DOM . Entre medio de ambos vamos a poner un componente llamado Main el cual renderiza un componente <section />  con el contenido de la página. El Header tiene que mostrar un título y una barra de navegación y el footer un párrafo con información del autor del sitio. 
+
+
+
+
+Ejercicio 4
+Desde el Container vamos a crear un estado local para el título de la página, los links de navegación y la información de contacto del autor de la página. Los mismos deberán ser enviados a los respectivos componentes que usen esa información. 
+
+
+
+
+
+Ejercicio 5
+Momentáneamente vamos a crear un componente llamado Admin el cual se mostrará dentro de Main. Admin debe mostrar un formulario donde se puedan cambiar los distinto estados locales de la aplicación que se encuentran en Container 
